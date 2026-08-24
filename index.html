@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masterclass en vivo · Mindvancci</title>
+<meta name="description" content="Ya sabes cuál es tu bloqueo. Lo que no sabes es cómo salir de él. Masterclass en vivo para empresarias saturadas de información.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- ══════════════════════════════════════════════════════════
+     EDITAR SOLO AQUÍ. Todo lo demás se actualiza solo.
+     ══════════════════════════════════════════════════════════ -->
+<script>
+const CONFIG = {
+  fechaHora:   "2026-09-11T19:00:00-05:00", // año-mes-díaThora · -05:00 = Ecuador
+  fechaTexto:  "Jueves 11 de septiembre",
+  horaTexto:   "19:00 hora Ecuador",
+  duracion:    "3 horas o más",
+  precio:      "$22",
+  precioAntes: "$97",
+  valorTotal:  "$347",
+  linkPago:    "https://pay.hotmart.com/D107298501T",
+  cupos:       "60"
+};
+</script>
+
+<style>
+:root{
+  --tinta:#24091A;
+  --nata:#FFF6F8;
+  --rosa:#FF2E74;
+  --rosa-hondo:#C4145A;
+  --piel:#FADCE4;
+  --humo:#7A5265;
+  --linea:rgba(122,82,101,.26);
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --texto:"Instrument Sans",system-ui,sans-serif;
+  --mono:"Space Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--nata);color:var(--tinta);font-family:var(--texto);
+     font-size:17px;line-height:1.55;padding-bottom:86px}
+@media(min-width:820px){body{padding-bottom:0}}
+
+.wrap{width:100%;max-width:680px;margin:0 auto;padding:0 22px}
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:700;
+         letter-spacing:.16em;text-transform:uppercase;color:var(--rosa)}
+h1,h2,h3{font-family:var(--display);line-height:1.03;letter-spacing:-.03em;font-weight:800}
+h1{font-size:clamp(38px,10.5vw,66px)}
+h2{font-size:clamp(29px,7.4vw,44px)}
+h3{font-size:20px;letter-spacing:-.02em;font-weight:600}
+p{color:var(--humo)}
+strong{color:var(--tinta);font-weight:600}
+.lede{font-size:clamp(17px,4.4vw,20px);line-height:1.5}
+
+/* botón */
+.cta{display:block;width:100%;text-align:center;text-decoration:none;
+  background:var(--rosa);color:#fff;font-family:var(--display);font-weight:800;
+  font-size:19px;letter-spacing:-.01em;padding:20px 24px;border-radius:999px;
+  border:none;cursor:pointer;box-shadow:0 10px 0 -2px var(--rosa-hondo);
+  transition:transform .12s ease,box-shadow .12s ease}
+.cta:hover{transform:translateY(3px);box-shadow:0 7px 0 -2px var(--rosa-hondo)}
+.cta:active{transform:translateY(6px);box-shadow:0 4px 0 -2px var(--rosa-hondo)}
+.cta:focus-visible{outline:3px solid var(--tinta);outline-offset:4px}
+.cta-nota{font-family:var(--mono);font-size:12px;text-align:center;
+          color:var(--humo);margin-top:14px}
+.sec-tinta .cta-nota{color:#9E7286}
+
+/* hero */
+.hero{background:var(--tinta);color:var(--nata);padding:50px 0 44px}
+.hero h1{color:#fff;margin:18px 0 20px}
+.hero h1 em{font-style:normal;color:var(--rosa)}
+.hero p{color:#E6C6D4}
+.tachado{position:relative;display:inline-block;color:#E6C6D4}
+.tachado::after{content:"";position:absolute;left:-2%;right:-2%;top:52%;
+  height:3px;background:var(--rosa);transform:rotate(-1.5deg)}
+.precio-fila{display:flex;align-items:baseline;gap:12px;margin:30px 0 6px}
+.precio-num{font-family:var(--display);font-weight:800;font-size:56px;
+            color:#fff;letter-spacing:-.04em;line-height:1}
+.precio-antes{font-family:var(--mono);font-size:15px;color:#9E7286;text-decoration:line-through}
+.precio-eti{font-family:var(--mono);font-size:12px;letter-spacing:.12em;
+            text-transform:uppercase;color:#9E7286;margin-bottom:22px}
+.datos{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.dato{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
+      border:1px solid #4A2036;border-radius:999px;padding:7px 13px;color:#E6C6D4}
+
+/* countdown */
+.reloj{background:var(--rosa);color:#fff;padding:16px 0}
+.reloj-in{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.reloj-eti{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.reloj-num{display:flex;gap:10px}
+.uni{text-align:center;min-width:44px}
+.uni b{display:block;font-family:var(--display);font-weight:800;font-size:26px;line-height:1}
+.uni span{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;
+          text-transform:uppercase;opacity:.85}
+
+/* secciones */
+.sec{padding:56px 0}
+.sec-piel{background:var(--piel)}
+.sec-tinta{background:var(--tinta);color:var(--nata)}
+.sec-tinta h2,.sec-tinta h3{color:#fff}
+.sec-tinta p{color:#E6C6D4}
+.sec h2{margin:14px 0 20px}
+
+/* listas de reconocimiento */
+.marcas{list-style:none;margin-top:26px;display:grid;gap:2px}
+.marcas li{background:var(--nata);border-left:4px solid var(--rosa);
+           padding:16px 18px;font-size:16.5px}
+.sec-piel .marcas li{background:#fff}
+
+/* semáforo */
+.semaforo{margin-top:32px;display:grid;gap:14px}
+.luz{display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:start;
+     background:var(--nata);border-radius:18px;padding:20px 18px}
+.bola{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;
+      font-family:var(--mono);font-size:10px;font-weight:700;color:#fff;letter-spacing:.04em}
+.b1{background:#8C2E52}
+.b2{background:#E0578C}
+.b3{background:var(--rosa);box-shadow:0 0 0 6px rgba(255,46,116,.22)}
+.luz h3{margin-bottom:5px;color:var(--tinta)}
+.luz p{font-size:15.5px}
+.tm{font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--rosa)}
+
+/* temario */
+.bloques{margin-top:28px;display:grid}
+.bloque{border-top:1px solid var(--linea);padding:22px 0;display:grid;gap:8px}
+.bloque:last-child{border-bottom:1px solid var(--linea)}
+.bloque .num{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--rosa)}
+.bloque p{font-size:16px}
+
+/* para quién sí / no */
+.dosco{display:grid;gap:16px;margin-top:28px}
+@media(min-width:700px){.dosco{grid-template-columns:1fr 1fr}}
+.caja{background:#fff;border-radius:18px;padding:24px 20px;border:1px solid var(--linea)}
+.caja h3{margin-bottom:14px}
+.caja ul{list-style:none;display:grid;gap:11px}
+.caja li{display:grid;grid-template-columns:20px 1fr;gap:10px;font-size:15.5px;align-items:start}
+.si{color:var(--rosa);font-weight:700}
+.no{color:var(--humo);font-weight:700}
+
+/* testimonios */
+.testi{display:grid;gap:14px;margin-top:28px}
+.tarjeta{background:#fff;border-radius:18px;padding:24px 20px;border-top:4px solid var(--rosa)}
+.tarjeta p{font-size:16.5px;color:var(--tinta)}
+.tarjeta .quien{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;
+                text-transform:uppercase;color:var(--humo);margin-top:14px}
+
+/* stack de valor */
+.stack{margin-top:28px;background:#fff;border-radius:18px;padding:8px 20px;border:1px solid var(--linea)}
+.fila{display:flex;justify-content:space-between;gap:16px;align-items:baseline;
+      padding:16px 0;border-bottom:1px solid var(--linea)}
+.fila:last-of-type{border-bottom:none}
+.fila .q{font-size:16px;color:var(--tinta);font-weight:500}
+.fila .v{font-family:var(--mono);font-size:14px;color:var(--humo);white-space:nowrap}
+.total{display:flex;justify-content:space-between;gap:16px;align-items:baseline;
+       padding:18px 0;border-top:2px solid var(--tinta);margin-top:4px}
+.total .q{font-family:var(--display);font-weight:800;font-size:19px}
+.total .v{font-family:var(--mono);font-size:15px;text-decoration:line-through;color:var(--humo)}
+
+/* oferta */
+.oferta{background:#fff;border:2px solid var(--tinta);border-radius:24px;
+        padding:30px 24px;margin-top:26px}
+.oferta .precio-fila{margin:0 0 4px}
+.oferta .precio-num{color:var(--tinta)}
+.oferta .precio-antes{color:var(--humo)}
+.oferta .precio-eti{color:var(--humo);margin-bottom:24px}
+
+/* garantía */
+.garantia{background:var(--tinta);color:var(--nata);border-radius:20px;
+          padding:28px 22px;margin-top:26px}
+.garantia h3{color:#fff;margin-bottom:10px}
+.garantia p{color:#E6C6D4;font-size:16px}
+
+/* bio */
+.bio{display:grid;gap:18px;margin-top:22px}
+.bio-firma{font-family:var(--display);font-weight:800;font-size:22px;color:#fff}
+.bio-rol{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
+         text-transform:uppercase;color:var(--rosa);margin-top:2px}
+
+/* faq */
+details{border-bottom:1px solid var(--linea);padding:18px 0}
+summary{font-family:var(--display);font-weight:600;font-size:17.5px;cursor:pointer;
+        list-style:none;display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--rosa);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:12px;font-size:16px}
+
+/* footer */
+footer{background:var(--tinta);color:#9E7286;padding:38px 0;font-size:13px}
+footer p{color:#9E7286;font-size:13px}
+footer .marca{font-family:var(--display);font-weight:800;font-size:20px;color:#fff;margin-bottom:10px}
+
+/* barra fija móvil */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(36,9,26,.97);
+  backdrop-filter:blur(8px);padding:12px 18px;display:flex;align-items:center;gap:14px;
+  border-top:1px solid #4A2036}
+.barra .info{flex:1;min-width:0}
+.barra .info b{display:block;font-family:var(--display);font-weight:800;color:#fff;font-size:17px}
+.barra .info span{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;
+                  color:#9E7286;text-transform:uppercase}
+.barra .cta{width:auto;padding:14px 22px;font-size:16px;box-shadow:0 6px 0 -2px var(--rosa-hondo)}
+@media(min-width:820px){.barra{display:none}}
+
+/* revelado */
+.rev{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.rev.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rev{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .cta{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Masterclass en vivo · Zoom</span>
+    <h1>Ya sabes cuál es tu bloqueo. <em>Lo que no sabes es cómo salir de él.</em></h1>
+    <p class="lede">Esto no es una clase de 45 minutos. Es un entrenamiento en vivo de tres horas o más, donde no vamos a diagnosticarte. Vamos a desbloquear una cosa concreta que llevas meses cargando, y sales con el siguiente paso ya decidido y con fecha.</p>
+
+    <div class="precio-fila">
+      <span class="precio-num" data-precio>$22</span>
+      <span class="precio-antes" data-antes>$97</span>
+    </div>
+    <div class="precio-eti">Pago único · Solo en vivo, sin grabación</div>
+
+    <a class="cta" href="#" data-pago>Quiero mi lugar</a>
+    <p class="cta-nota" data-cupos>Cupos limitados</p>
+
+    <div class="datos">
+      <span class="dato" data-fecha>Fecha por confirmar</span>
+      <span class="dato" data-hora>Hora por confirmar</span>
+      <span class="dato" data-duracion>90 minutos</span>
+    </div>
+  </div>
+</header>
+
+<!-- COUNTDOWN -->
+<div class="reloj">
+  <div class="wrap reloj-in">
+    <span class="reloj-eti">La clase empieza en</span>
+    <div class="reloj-num">
+      <div class="uni"><b id="d">--</b><span>Días</span></div>
+      <div class="uni"><b id="h">--</b><span>Horas</span></div>
+      <div class="uni"><b id="m">--</b><span>Min</span></div>
+      <div class="uni"><b id="s">--</b><span>Seg</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIFICAR NO ES DESBLOQUEAR -->
+<section class="sec">
+  <div class="wrap rev">
+    <span class="eyebrow">Empecemos por lo incómodo</span>
+    <h2>Identificar no es desbloquear.</h2>
+    <p class="lede" style="margin-bottom:18px">Has visto suficientes clases gratis. Ya te dijeron que tienes miedo al éxito, que arrastras un patrón familiar, que te saboteas sola.</p>
+    <p class="lede" style="margin-bottom:18px">Te lo creíste. Y con toda esa claridad encima, el lunes seguiste igual.</p>
+    <p class="lede" style="margin-bottom:18px">No es que el diagnóstico esté mal. Es que <strong>entender por qué estás atorada no te mueve ni un centímetro.</strong> Lo que mueve es un procedimiento: qué se hace primero, qué se descarta, qué decisión se toma hoy y con qué fecha.</p>
+  </div>
+</section>
+
+<!-- EXCESO DE INFORMACIÓN -->
+<section class="sec sec-piel">
+  <div class="wrap rev">
+    <span class="eyebrow">El bloqueo real</span>
+    <h2>No te falta información. Te sobra.</h2>
+    <p class="lede">Tienes 200 guardados en Instagram, dos cursos sin terminar y cuatro podcasts que dicen cosas opuestas. Y cada consejo nuevo que entra no te acerca: te vuelve a mover el piso.</p>
+
+    <ul class="marcas">
+      <li>Escuchas a alguien que admiras y <strong>replanteas todo el negocio</strong> ese mismo día.</li>
+      <li>Tienes tres estrategias distintas apuntadas y <strong>ninguna aplicada</strong>, porque no sabes cuál es la buena.</li>
+      <li>Cada vez que decides algo aparece un reel que dice lo contrario y <strong>vuelves a dudar.</strong></li>
+      <li>Sabes más de negocios que la mayoría de tus colegas y aun así <strong>ellas avanzan y tú sigues estudiando.</strong></li>
+    </ul>
+
+    <p style="margin-top:26px;font-size:17px"><strong>Un consejo buenísimo aplicado en la etapa equivocada te atrasa más que uno malo.</strong> Y nadie te enseñó a distinguir cuál es cuál.</p>
+    <p style="margin-top:16px;font-size:17px">Aquí no vienes a aprender algo nuevo. Vienes a decidir qué de todo lo que ya sabes es para ti hoy, y a soltar el resto sin culpa.</p>
+  </div>
+</section>
+
+<!-- MECANISMO -->
+<section class="sec">
+  <div class="wrap rev">
+    <span class="eyebrow">El mecanismo</span>
+    <h2>Método Semáforo™</h2>
+    <p class="lede">El filtro que te dice, sin dudar, qué tocar esta semana y qué dejar quieto. No todo lo que tienes encima merece tu energía hoy, y no toda la información que te llega es para la etapa en la que estás.</p>
+
+    <div class="semaforo">
+      <div class="luz">
+        <div class="bola b1">ALTO</div>
+        <div>
+          <span class="tm">Estado 01</span>
+          <h3>Parálisis</h3>
+          <p>Sabes que hay que decidir y no decides. No es miedo: le estás pidiendo la respuesta a una etapa que ya cerraste.</p>
+        </div>
+      </div>
+      <div class="luz">
+        <div class="bola b2">ESPERA</div>
+        <div>
+          <span class="tm">Estado 02</span>
+          <h3>Ruido</h3>
+          <p>Demasiada información buena entrando a la vez. Se siente productivo, mide cero, y te deja empezando de nuevo cada lunes.</p>
+        </div>
+      </div>
+      <div class="luz">
+        <div class="bola b3">SIGUE</div>
+        <div>
+          <span class="tm">Estado 03</span>
+          <h3>Calma</h3>
+          <p>Pocas decisiones, tomadas a tiempo, con energía de sobra. No es un estado de ánimo: es un diseño.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEMARIO -->
+<section class="sec sec-tinta">
+  <div class="wrap rev">
+    <span class="eyebrow">Cinco bloques, en este orden</span>
+    <h2>Cómo vamos a desbloquearlo.</h2>
+    <div class="bloques">
+      <div class="bloque">
+        <span class="num">BLOQUE 01</span>
+        <h3>Nombrar el bloqueo real</h3>
+        <p>El que dices en voz alta casi nunca es el que te tiene detenida. En diez minutos ubicamos el verdadero, y suele ser bastante menos dramático de lo que creías.</p>
+      </div>
+      <div class="bloque">
+        <span class="num">BLOQUE 02</span>
+        <h3>Filtrar el ruido</h3>
+        <p>Vas a aprender a leer cualquier consejo, curso o estrategia y decidir en treinta segundos si es para tu etapa o no. Se acaba el tambaleo cada vez que alguien opina.</p>
+      </div>
+      <div class="bloque">
+        <span class="num">BLOQUE 03</span>
+        <h3>El semáforo: qué se desbloquea primero</h3>
+        <p>No todos los bloqueos se tocan al mismo tiempo. Algunos hay que dejarlos en rojo a propósito. Vas a saber cuál mover esta semana y cuáles soltar sin culpa.</p>
+      </div>
+      <div class="bloque">
+        <span class="num">BLOQUE 04</span>
+        <h3>El filtro DEDE: la salida concreta</h3>
+        <p>Decide, Elimina, Delega, Espera. Cada bloqueo sale por una de estas cuatro puertas. Ninguna es "trabajarlo más".</p>
+      </div>
+      <div class="bloque">
+        <span class="num">BLOQUE 05</span>
+        <h3>Tu desbloqueo, con fecha</h3>
+        <p>Sales con una decisión tomada, escrita y con día en el calendario. No con la sensación bonita de haber entendido algo.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:26px;font-size:16.5px;color:#E6C6D4"><strong style="color:#fff">No mido el reloj, mido a las estudiantes.</strong> El entrenamiento dura tres horas o más, con pausas. Si al terminar el bloque cinco todavía hay quien no cierra su decisión, ahí me quedo. Ven sin nada agendado detrás.</p>
+  </div>
+</section>
+
+<!-- CALIFICACIÓN -->
+<section class="sec sec-piel">
+  <div class="wrap rev">
+    <span class="eyebrow">Seamos claras</span>
+    <h2>Esta clase no es para todas.</h2>
+    <div class="dosco">
+      <div class="caja">
+        <h3>Entra si…</h3>
+        <ul>
+          <li><span class="si">✓</span><span>Ya sabes mucho y el problema es que no sabes qué aplicar.</span></li>
+          <li><span class="si">✓</span><span>Estás dispuesta a soltar información y proyectos que te costaron.</span></li>
+          <li><span class="si">✓</span><span>Prefieres una decisión firme a veinte ideas nuevas.</span></li>
+          <li><span class="si">✓</span><span>Vienes a trabajar tu caso, no a tomar apuntes.</span></li>
+        </ul>
+      </div>
+      <div class="caja">
+        <h3>No entres si…</h3>
+        <ul>
+          <li><span class="no">✕</span><span>Buscas otra explicación bonita de por qué estás bloqueada.</span></li>
+          <li><span class="no">✕</span><span>Quieres coleccionar una clase más para el archivo.</span></li>
+          <li><span class="no">✕</span><span>Necesitas que alguien decida por ti.</span></li>
+          <li><span class="no">✕</span><span>No piensas cambiar nada esta semana.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIOS -->
+<section class="sec">
+  <div class="wrap rev">
+    <span class="eyebrow">Audios que me llegan</span>
+    <h2>Nadie me escribe "estoy bloqueada".</h2>
+    <p class="lede">Me mandan audios de tres minutos que empiezan con "perdón, es que no sé ni cómo explicarte". Y siempre dicen alguna de estas tres cosas.</p>
+    <div class="testi">
+      <div class="tarjeta">
+        <p>"Tomé unas decisiones malísimas hace unos meses y todavía estoy pagando eso. Estoy perdiendo dinero y no sé en qué momento se me fue de las manos."</p>
+        <div class="quien">Lo que escucho en cada sesión</div>
+      </div>
+      <div class="tarjeta">
+        <p>"Me metí a un negocio por pura emoción. Terminé desgastada y peleada con mi mejor amiga, que era mi socia. ¿Qué me pasa?"</p>
+        <div class="quien">Lo que escucho en cada sesión</div>
+      </div>
+      <div class="tarjeta">
+        <p>"Quiero salir corriendo. Estoy pagando una deuda con otra. Y todo el mundo dice trabaja menos pero mejor, y yo no entiendo cómo. Lo único que sé hacer es meterle más horas."</p>
+        <div class="quien">Lo que escucho en cada sesión</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTORIDAD -->
+<section class="sec sec-tinta">
+  <div class="wrap rev">
+    <span class="eyebrow">Quién da la clase</span>
+    <h2>No soy coach. Diseño formas de pensar.</h2>
+    <div class="bio">
+      <p>Vengo del marketing político, donde el trabajo era ordenar el caos ajeno con la cabeza fría y el reloj corriendo. Ahí aprendí lo que te vengo a enseñar: las decisiones no se toman con más información, se toman con mejores filtros.</p>
+      <p>Después construí Mindvancci, un laboratorio donde empresarias saturadas dejan de pelear con su propia cabeza y empiezan a diseñar la etapa que sigue. Los marcos que vas a usar en esta clase —Lenguaje de Etapas™, Método Semáforo™, el filtro DEDE— salieron de ahí.</p>
+      <div>
+        <div class="bio-firma">Gaby</div>
+        <div class="bio-rol">Fundadora de Mindvancci</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="sec sec-piel">
+  <div class="wrap rev">
+    <span class="eyebrow">Lo que te llevas</span>
+    <h2>Un pago. Sin membresía, sin letra chica.</h2>
+
+    <div class="stack">
+      <div class="fila"><span class="q">Entrenamiento en vivo, <span data-duracion-in>3 horas o más</span></span><span class="v">$197</span></div>
+      <div class="fila"><span class="q">Trabajo sobre tu caso concreto, en la sala</span><span class="v">$67</span></div>
+      <div class="fila"><span class="q">Hoja de trabajo del Método Semáforo™ (PDF)</span><span class="v">$43</span></div>
+      <div class="fila"><span class="q">Nos quedamos hasta que cierres tu decisión</span><span class="v">$40</span></div>
+      <div class="total"><span class="q">Valor total</span><span class="v" data-valor>$347</span></div>
+    </div>
+
+    <div class="oferta">
+      <div class="precio-fila">
+        <span class="precio-num" data-precio>$22</span>
+        <span class="precio-antes" data-antes>$97</span>
+      </div>
+      <div class="precio-eti">Hoy, pago único</div>
+      <a class="cta" href="#" data-pago>Reservar mi lugar</a>
+      <p class="cta-nota" data-cupos>Cupos limitados</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec">
+  <div class="wrap rev">
+    <span class="eyebrow">Antes de que preguntes</span>
+    <h2>Las dudas de siempre.</h2>
+
+    <details>
+      <summary>Ya vi clases gratis sobre bloqueos.</summary>
+      <p>Seguro. Y por eso ya sabes cuál es el tuyo. Esas clases se detienen justo donde esta empieza: en qué se hace concretamente para salir. Si con las gratis te hubiera bastado, no estarías leyendo esto.</p>
+    </details>
+    <details>
+      <summary>¿Va a haber grabación?</summary>
+      <p>No, y es a propósito. Guardarlo para verlo después es justo el patrón que te trajo hasta aquí: lo dejas listo, con la mejor intención, y ahí se queda. Ya tienes suficientes cosas guardadas esperando el momento perfecto.</p>
+      <p>Aquí tienes que venir. Sentarte, hacer el entrenamiento, y dejar que algo te toque la fibra en vivo. Eso no pasa viendo un video en doble velocidad mientras contestas mensajes. Si no puedes esa fecha, espera la siguiente convocatoria: prefiero que entres cuando puedas estar entera.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto dura exactamente?</summary>
+      <p>Tres horas o más, con pausas. No corto por reloj: cierro cuando el grupo cerró. Si a la hora tres siguen trabajando, ahí me quedo. Ven sin nada agendado detrás.</p>
+    </details>
+    <details>
+      <summary>¿Esto es otro curso de productividad?</summary>
+      <p>No. La productividad te enseña a hacer más cosas. Aquí trabajamos en decidir cuáles no vas a hacer nunca. Es lo contrario.</p>
+    </details>
+    <details>
+      <summary>¿Y si mi bloqueo es muy específico?</summary>
+      <p>Mejor. El método se aplica a un caso concreto, no a la vida en general. Trae el tuyo escrito y lo pasamos por el filtro en vivo.</p>
+    </details>
+    <details>
+      <summary>¿Me van a vender algo al final?</summary>
+      <p>Te voy a contar qué más hay en Mindvancci por si quieres seguir. La clase se entrega completa antes de eso: la parte comercial va al final y es opcional, el entrenamiento completo va antes.</p>
+    </details>
+    <details>
+      <summary>¿Cómo recibo el acceso?</summary>
+      <p>Apenas pagas te llega un correo con el link de Zoom. Revisa spam y promociones si no aparece en cinco minutos.</p>
+    </details>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section class="sec sec-tinta">
+  <div class="wrap rev" style="text-align:center">
+    <h2>Entender tu bloqueo es gratis. <span style="color:var(--rosa)">Salir de él tiene método.</span></h2>
+    <p class="lede" style="margin:18px 0 28px">Puedes seguir estudiando tu bloqueo un año más. O puedes salir de él en una sola sesión.</p>
+    <a class="cta" href="#" data-pago>Quiero mi lugar</a>
+    <p class="cta-nota" data-cupos>Cupos limitados</p>
+    <p style="margin-top:26px;font-size:15.5px;color:#E6C6D4">
+      Son <span data-precio>$22</span>. Menos que una salida al cine con alguien.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="marca">Mindvancci</div>
+    <p>Laboratorio de diseño de etapas. Ecuador.</p>
+  </div>
+</footer>
+
+<!-- BARRA FIJA MÓVIL -->
+<div class="barra">
+  <div class="info">
+    <b data-precio>$22</b>
+    <span data-fecha-corta>Fecha por confirmar</span>
+  </div>
+  <a class="cta" href="#" data-pago>Reservar</a>
+</div>
+
+<script>
+(function(){
+  const set = (a,v) => document.querySelectorAll('['+a+']').forEach(e => e.textContent = v);
+
+  set('data-precio', CONFIG.precio);
+  set('data-antes', CONFIG.precioAntes);
+  set('data-valor', CONFIG.valorTotal);
+  set('data-fecha', CONFIG.fechaTexto);
+  set('data-hora', CONFIG.horaTexto);
+  set('data-duracion', CONFIG.duracion);
+  set('data-duracion-in', CONFIG.duracion);
+  set('data-cupos', 'Solo ' + CONFIG.cupos + ' cupos');
+  set('data-fecha-corta', CONFIG.fechaTexto);
+
+  document.querySelectorAll('[data-pago]').forEach(a => a.href = CONFIG.linkPago);
+
+  const meta = new Date(CONFIG.fechaHora).getTime();
+  const el = {d:document.getElementById('d'),h:document.getElementById('h'),
+              m:document.getElementById('m'),s:document.getElementById('s')};
+  const pad = n => String(n).padStart(2,'0');
+
+  function tic(){
+    const falta = meta - Date.now();
+    if (isNaN(meta) || falta <= 0){
+      document.querySelector('.reloj-eti').textContent = 'Inscripciones abiertas';
+      Object.values(el).forEach(e => e.textContent = '00');
+      return;
+    }
+    el.d.textContent = pad(Math.floor(falta/86400000));
+    el.h.textContent = pad(Math.floor(falta/3600000)%24);
+    el.m.textContent = pad(Math.floor(falta/60000)%60);
+    el.s.textContent = pad(Math.floor(falta/1000)%60);
+  }
+  tic(); setInterval(tic,1000);
+
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }});
+  },{threshold:.12});
+  document.querySelectorAll('.rev').forEach(n => io.observe(n));
+})();
+</script>
+</body>
+</html>
